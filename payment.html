@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* style.css */
+body{
+    background-color: #89b5e3;
+    background-image: url("Image/payment.webp");
+    background-size: cover;
+}
+.payment-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin:100px auto;
+  background-image: url("index/Image/water3.webp");
+}
+.payment-container p{
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 0px;
+  margin: 0px;
+
+}
+
+.payment-title {
+  text-align: center;
+}
+
+.payment-input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.payment-error-message {
+  color: red;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.payment-submit-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.payment-submit-button:hover{
+    background-color: #1070d6;
+
+}
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2 class="payment-title">Make Payment</h2>
+    <form id="payment-form" class="payment-form" action="shop.html">
+      <input type="text" id="cardholder-name" class="payment-input" placeholder="Cardholder Name" required>
+      <input type="text" id="card-number" class="payment-input" placeholder="Card Number" required>
+      <input type="text" id="expiry-date" class="payment-input" placeholder="Expiry Date (MM/YY)" required>
+      <input type="text" id="cvv" class="payment-input" placeholder="CVV" required>
+      <p id="error-message" class="payment-error-message"></p>
+      <button type="submit" class="payment-submit-button">Pay Now</button>
+    </form>
+    <p>or</p>
+    <button type="submit" class="payment-submit-button" onclick="window.location.href='Bar.html'">Scan QR Code</button>
+  </div>
+  <script>
+    // script.js
+document.getElementById("payment-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // prevent form submission
+
+  // Get form input values
+  var cardholderName = document.getElementById("cardholder-name").value;
+  var cardNumber = document.getElementById("card-number").value;
+  var expiryDate = document.getElementById("expiry-date").value;
+  var cvv = document.getElementById("cvv").value;
+
+  // Perform form validation
+  if (cardholderName === "" || cardNumber === "" || expiryDate === "" || cvv === "") {
+    document.getElementById("error-message").textContent = "All fields are required";
+  } else {
+    // Form is valid, submit the form (in this example, navigate to payment-success.html)
+    document.getElementById("payment-form").submit();
+  }
+});
+  </script>
+</body>
+</html>

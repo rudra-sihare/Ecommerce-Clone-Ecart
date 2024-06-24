@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+  body {
+    background-image:url("Image/water.jpg");
+    font-family: Arial, sans-serif;
+    background-size: cover;
+  }
+  
+  .login-container {
+    max-width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  }
+  
+  .login-title {
+    text-align: center;
+  }
+  
+  .login-form {
+    margin-top: 20px;
+  }
+  
+  .login-input {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .login-error-message {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: red;
+    text-align: center;
+  }
+  
+  .login-submit-button {
+    display: block;
+    width: 98%;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition-delay: 0.8s ease;
+  }
+
+  .login-submit-button:hover{
+    background-color: #155aa4;
+  }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2 class="login-title">Login</h2>
+    <form id="login-form" class="login-form">
+      <input type="email" id="email" class="login-input" placeholder="Email" required>
+      <input type="password" id="password" class="login-input" placeholder="Password" required>
+      <p id="error-message" class="login-error-message"></p>
+      <button type="submit" class="login-submit-button">Login</button>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // prevent form submission
+
+  // Get form input values
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  // Perform form validation
+  if (email === "" || password === "") {
+    document.getElementById("error-message").textContent = "Email and password are required";
+  } else {
+    // Form is valid, submit the form (in this example, navigate to index.html)
+    document.getElementById("login-form").action = "index.html";
+    document.getElementById("login-form").submit();
+  }
+});
+  </script>
+</body>
+</html>
+
+

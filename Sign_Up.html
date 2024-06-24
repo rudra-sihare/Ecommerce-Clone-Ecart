@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Sign Up</title>
+    <style>
+      body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    background-image: url("Image/water.webp");
+  }
+  
+  .signup-container {
+    max-width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  }
+  
+  .signup-title {
+    text-align: center;
+  }
+  
+  .signup-form {
+    margin-top: 20px;
+  }
+  
+  .signup-input {
+    display: block;
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .signup-error-message {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: red;
+    text-align: center;
+  }
+  
+  .signup-submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .signup-submit-button:hover{
+    background-color: #1271d7;
+  }
+
+  .login{
+        display: block;
+        width: 94%;
+        padding: 9px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+  }
+
+  .login:hover{
+    background-color: #1471d4;
+  }
+    </style>
+</head>
+<body style="background: #E3E6F3">
+    <section id="header">
+        <a href="#"><img src="Image/ecart.jpeg" class="logo" alt="logo"></a>
+        <div>
+            <ul class="navbar">
+                <li><a class="active" href="Sign_Up.html">Sign Up</a></li>
+                <li><a href="sproduct.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="signup-container">
+      <h2 class="signup-title">Sign Up</h2>
+      <form id="signup-form" class="signup-form">
+        <input type="text" id="name" class="signup-input" placeholder="Name" required>
+        <input type="email" id="email" class="signup-input" placeholder="Email" required>
+        <input type="password" id="password" class="signup-input" placeholder="Password" required>
+        <input type="password" id="confirm-password" class="signup-input" placeholder="Confirm Password" required>
+        <p id="error-message" class="signup-error-message"></p>
+        <button type="submit" class="signup-submit-button">Sign Up</button>
+        <br>
+        <a href="login.html" class="login">Login</a>
+      </form>
+    </div>
+    <script>
+      document.getElementById("signup-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // prevent form submission
+    
+      // Get form input values
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirm-password").value;
+    
+      // Perform form validation
+      if (name === "" || email === "" || password === "" || confirmPassword === "") {
+        document.getElementById("error-message").textContent = "All fields are required";
+      } else if (password !== confirmPassword) {
+        document.getElementById("error-message").textContent = "Passwords do not match";
+      } else {
+        // Form is valid, submit the form (in this example, navigate to index.html)
+        document.getElementById("signup-form").action = "index.html";
+        document.getElementById("signup-form").submit();
+      }
+    });
+    document.getElementsByClassName("login")[0].addEventListener("click", function() {
+      // Navigate to login.html when login link is clicked
+      window.location.href = "login.html";
+    });
+    </script>
+</body>
+</html>

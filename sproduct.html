@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Cart</title>
+</head>
+<body style="background: #E3E6F3">
+
+    <section id="header">
+        <a href="#"><img src="Image/ecart.jpeg" class="logo" alt="logo"></a>
+        <div>
+            <ul class="navbar">
+                <li><a class="active" href="sproduct.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="Image/NS1.webp" alt="#" width="100%" id="MainImg">
+
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="Image/NS1.webp"  class="small-img" style="width:100px" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="Image/NS2.jfif" class="small-img" style="width:100px" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="Image/NS5.jpeg" class="small-img" style="width:100px" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="Image/NS4.jfif" class="small-img" style="width:100px" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="single-pro-details">
+            <h5>Home / Shirt</h5>
+            <h4>Men's Fashion Shirt</h4>
+            <h2>$78.00</h2>
+            <select>
+                <option>Select Size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+            </select>
+            <br><br>
+            <input type="number" value="1">
+            <button class="normal" style="transition: 0.3s ease;">Add To Cart</button>
+            <button style="transition: 0.3s ease;" onclick="window.location.href='payment.html'">Payment</button>
+            <h4>Product Details</h4>
+            <span>	
+                Classy Elegant Men Shirts in Meesho Mega Blockbuster Sale with upto 80% Off
+                ""Fabric: Cotton Blend Sleeve Length: Long Sleeves Pattern: Solid Multipack: 1 Sizes: XL (Chest Size: 42 in, Length Size: 29 in) L (Chest Size: 40 in, Length Size: 28.5 in) 
+            </span>
+        </div>
+    </section>
+    <section id="product1" class="section-p1">
+        <h2>New Arrivals</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="pro-container">
+
+            <div class="pro">
+                <img src="Image/NS1.webp" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Men Modern Plain Shirt</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping fa-flip"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="Image/NS2.jfif" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Men Shirt Long Sleeve</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping fa-flip"></i></a>
+            </div>
+
+            <div class="pro">
+                <img style="height:200px" src="Image/NS3.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>oglccg Men's long-sleeved business shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping fa-flip"></i></a>
+            </div>
+
+            <div class="pro">
+                <img style="height:200px" src="Image/NS4.jfif" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Men's Wings Black Dress Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping fa-flip"></i></a>
+            </div>
+        </div>
+    </section>
+
+<script>
+    var MainImg = document.getElementById("MainImg");
+    var smalling = document.getElementsByClassName("small-img");
+
+    smalling[0].onclick = function(){
+        MainImg.src = smalling[0].src;
+    }
+    smalling[1].onclick = function(){
+        MainImg.src = smalling[1].src;
+    }
+    smalling[2].onclick = function(){
+        MainImg.src = smalling[2].src;
+    }
+    smalling[3].onclick = function(){
+        MainImg.src = smalling[3].src;
+    }
+</script>
+</body>
+</html>
